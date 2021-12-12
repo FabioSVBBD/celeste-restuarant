@@ -8,30 +8,15 @@ const PORT = process.env.PORT || 5000;
 const endpoints = {
     "endpoints": [
         "/",
-        {
-            "/tasting-menu": [
-                "/index",
-            ],
-        },
-        {
-            "/a-la-carte-menu": [
-                {
-                    "/starters": [
-                        "/{index}",
-                    ],
-                },
-                {
-                    "/mains": [
-                        "/{index}",
-                    ],
-                },
-                {
-                    "/deserts": [
-                        "/{index}",
-                    ],
-                }
-            ],
-        },
+        "/tasting-menu",
+        "/tasting-menu/{index}",
+        "/a-la-carte-menu",
+        "/a-la-carte-menu/starters",
+        "/a-la-carte-menu/starters/{index}",
+        "/a-la-carte-menu/mains",
+        "/a-la-carte-menu/mains/{index}",
+        "/a-la-carte-menu/deserts",
+        "/a-la-carte-menu/deserts/{index}",
     ]
 }
 
