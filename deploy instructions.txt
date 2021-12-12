@@ -1,0 +1,8 @@
+Very First time:
+heroku login
+heroku git:clone -a celeste-restuarant
+
+Then When saving:
+git add .
+git commit -m "Commit Description"
+git push heroku master
