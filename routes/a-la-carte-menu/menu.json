@@ -1,55 +1,53 @@
 {
-    "menu": {
-        "starters": [
-            {
-                "title": "Grilled Peaches",
-                "description": "Grilled peach, goat's cheese, peach chutney, rocket, mixed seed crackers and onion ash",
-                "price": "R150.00"
-            },
-            {
-                "title": "Céleste Snails",
-                "description": "Snails in the wood fired oven, tomato and garlic stew, herb butter, mozzarella and gruyère",
-                "price": "R100.00"
-            },
-            {
-                "title": "Octopus",
-                "description": "Coal fired octopus, potato and halloumi with coriander and garlic, lemon aioli, sundried tomato",
-                "price": "R220.00"
-            }
-        ],
-        "mains": [
-            {
-                "title": "Chargrilled Chicken",
-                "description": "Chargrilled chicken thighs, blackbean and potato with smoked chilli, bone marrow and lime salsa, leafy salad",
-                "price": "R190.00"
-            },
-            {
-                "title": "Céleste Cane",
-                "description": "Confit duck leg finished in the Josper, cumin and raisin mole, sweet potato, salad of confit duck breast, cauliflower, root vegetables and bean sprouts",
-                "price": "R200.00"
-            },
-            {
-                "title": "Honey Aubergine",
-                "description": "Miso honey aubergine in wood oven, lentil and shitake mushroom, greens, sweet potato",
-                "price": "R170.00"
-            }
-        ],
-        "deserts": [
-            {
-                "title": "",
-                "description": "",
-                "price": ""
-            },
-            {
-                "title": "",
-                "description": "",
-                "price": ""
-            },
-            {
-                "title": "",
-                "description": "",
-                "price": ""
-            }
-        ]
-    }
+    "starters": [
+        {
+            "title": "Grilled Peaches",
+            "description": "Grilled peach, goat's cheese, peach chutney, rocket, mixed seed crackers and onion ash",
+            "price": "R150.00"
+        },
+        {
+            "title": "Céleste Snails",
+            "description": "Snails in the wood fired oven, tomato and garlic stew, herb butter, mozzarella and gruyère",
+            "price": "R100.00"
+        },
+        {
+            "title": "Octopus",
+            "description": "Coal fired octopus, potato and halloumi with coriander and garlic, lemon aioli, sundried tomato",
+            "price": "R220.00"
+        }
+    ],
+    "mains": [
+        {
+            "title": "Chargrilled Chicken",
+            "description": "Chargrilled chicken thighs, blackbean and potato with smoked chilli, bone marrow and lime salsa, leafy salad",
+            "price": "R190.00"
+        },
+        {
+            "title": "Céleste Cane",
+            "description": "Confit duck leg finished in the Josper, cumin and raisin mole, sweet potato, salad of confit duck breast, cauliflower, root vegetables and bean sprouts",
+            "price": "R200.00"
+        },
+        {
+            "title": "Honey Aubergine",
+            "description": "Miso honey aubergine in wood oven, lentil and shitake mushroom, greens, sweet potato",
+            "price": "R170.00"
+        }
+    ],
+    "deserts": [
+        {
+            "title": "",
+            "description": "",
+            "price": ""
+        },
+        {
+            "title": "",
+            "description": "",
+            "price": ""
+        },
+        {
+            "title": "",
+            "description": "",
+            "price": ""
+        }
+    ]
 }
