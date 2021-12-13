@@ -32,7 +32,7 @@ router.get('/starters/:index', (req, res) => {
 });
 
 router.get('/mains/:index', (req, res) => {
-    const {mains} = menu;
+    const { mains } = menu;
     const { index } = req.params;
 
     if (index >= 0 && index < mains.length)
