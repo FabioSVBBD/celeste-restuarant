@@ -15,7 +15,7 @@ router.get('/mains', (req, res) => {
     const { mains } = menu;
     res.send(mains);
 });
-router.get('/deserts', (req, res) => {
+router.get('/desserts', (req, res) => {
     const { deserts } = menu;
     res.send(deserts);
 });
