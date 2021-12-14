@@ -6,6 +6,7 @@ import aLaCarteRouter from './routes/a-la-carte-menu/menu.js';
 const PORT = process.env.PORT || 5000;
 
 const endpoints = {
+    "information": "All Amounts related to price or cost are in Rands (ZAR)",
     "endpoints": [
         "/",
         "/tasting-menu",
