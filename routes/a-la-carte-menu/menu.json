@@ -33,21 +33,31 @@
             "price": "R170.00"
         }
     ],
-    "deserts": [
+    "desserts": [
         {
-            "title": "",
-            "description": "",
-            "price": ""
+            "title": "Creme Brulee",
+            "description": "A creamy baked custard enhanced with a dash or Amaretto, topped with a crunchy praline and accompanied by Almond and Chocolate Biscotti",
+            "price": "R45.00"
         },
         {
-            "title": "",
-            "description": "",
-            "price": ""
+            "title": "Pistachio Nut Pavlova",
+            "description": "Crisp Pistachio Nut Meringue disk filled with Creme Chantilly and topped with fresh Seasonal Fruit",
+            "price": "R40.00"
         },
         {
-            "title": "",
-            "description": "",
-            "price": ""
+            "title": "Hot Chocolate Pudding",
+            "description": "Soft Centred Chocolate Pudding served with homemade Vanilla Pod Ice Cream",
+            "price": "R46.00"
+        },
+        {
+            "title": "Treacle Tart",
+            "description": "Old English treacle shortcrust pastry tart with hot custard or vanilla ice cream",
+            "price": "R60.00",
+        },
+        {
+            "title": "Sorbet",
+            "description": "Mandarin | Blackcurrant | Lemon | Mango",
+            "price": "R15.00"
         }
     ]
 }
