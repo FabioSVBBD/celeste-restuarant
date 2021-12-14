@@ -16,8 +16,8 @@ router.get('/mains', (req, res) => {
     res.send(mains);
 });
 router.get('/desserts', (req, res) => {
-    const { deserts } = menu;
-    res.send(deserts);
+    const { desserts } = menu;
+    res.send(desserts);
 });
 
 router.get('/starters/:index', (req, res) => {
