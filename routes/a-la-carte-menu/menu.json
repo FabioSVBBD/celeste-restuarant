@@ -3,61 +3,61 @@
         {
             "title": "Grilled Peaches",
             "description": "Grilled peach, goat's cheese, peach chutney, rocket, mixed seed crackers and onion ash",
-            "price": "R150.00"
+            "price": 150.00
         },
         {
             "title": "Céleste Snails",
             "description": "Snails in the wood fired oven, tomato and garlic stew, herb butter, mozzarella and gruyère",
-            "price": "R100.00"
+            "price": 100.00
         },
         {
             "title": "Octopus",
             "description": "Coal fired octopus, potato and halloumi with coriander and garlic, lemon aioli, sundried tomato",
-            "price": "R220.00"
+            "price": 220.00
         }
     ],
     "mains": [
         {
             "title": "Chargrilled Chicken",
             "description": "Chargrilled chicken thighs, blackbean and potato with smoked chilli, bone marrow and lime salsa, leafy salad",
-            "price": "R190.00"
+            "price": 190.00
         },
         {
             "title": "Céleste Cane",
             "description": "Confit duck leg finished in the Josper, cumin and raisin mole, sweet potato, salad of confit duck breast, cauliflower, root vegetables and bean sprouts",
-            "price": "R200.00"
+            "price": 200.00
         },
         {
             "title": "Honey Aubergine",
             "description": "Miso honey aubergine in wood oven, lentil and shitake mushroom, greens, sweet potato",
-            "price": "R170.00"
+            "price": 170.00
         }
     ],
     "desserts": [
         {
             "title": "Creme Brulee",
             "description": "A creamy baked custard enhanced with a dash or Amaretto, topped with a crunchy praline and accompanied by Almond and Chocolate Biscotti",
-            "price": "R45.00"
+            "price": 45.00
         },
         {
             "title": "Pistachio Nut Pavlova",
             "description": "Crisp Pistachio Nut Meringue disk filled with Creme Chantilly and topped with fresh Seasonal Fruit",
-            "price": "R40.00"
+            "price": 40.00
         },
         {
             "title": "Hot Chocolate Pudding",
             "description": "Soft Centred Chocolate Pudding served with homemade Vanilla Pod Ice Cream",
-            "price": "R46.00"
+            "price": 46.00
         },
         {
             "title": "Treacle Tart",
             "description": "Old English treacle shortcrust pastry tart with hot custard or vanilla ice cream",
-            "price": "R60.00"
+            "price": 60.00
         },
         {
             "title": "Sorbet",
             "description": "Mandarin | Blackcurrant | Lemon | Mango",
-            "price": "R15.00"
+            "price": 15.00
         }
     ]
 }
