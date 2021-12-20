@@ -11,6 +11,7 @@ const endpoints = {
     "information": "All Amounts related to price or cost are in Rands (ZAR)",
     "endpoints": [
         "/",
+        "/auth",
         "/tasting-menu",
         "/tasting-menu/{index}",
         "/a-la-carte-menu",
