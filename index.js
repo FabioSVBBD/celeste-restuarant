@@ -34,4 +34,3 @@ app.use('/auth', authRouter);
 app.get('/', (req, res) => res.send(endpoints));
 
 app.listen(PORT, () => console.log(`Listening on PORT ${PORT}`));
-

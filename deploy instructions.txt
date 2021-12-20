@@ -6,3 +6,7 @@ Then When saving:
 git add .
 git commit -m "Commit Description"
 git push heroku master
+
+To pull code:
+heroku login
+heroku git:clone -a celeste-restuarant
