@@ -40,14 +40,14 @@ router.get('/mains/:index', (req, res) => {
         res.send(`Index ${index} out of bounds: valid range [0; ${mains.length - 1}]`);
 });
 
-router.get('/deserts/:index', (req, res) => {
-    const { deserts } = menu;
+router.get('/desserts/:index', (req, res) => {
+    const { desserts } = menu;
     const { index } = req.params;
 
-    if (index >= 0 && index < deserts.length)
-        res.send(deserts[index]);
+    if (index >= 0 && index < desserts.length)
+        res.send(desserts[index]);
     else
-        res.send(`Index ${index} out of bounds: valid range [0; ${deserts.length - 1}]`);
+        res.send(`Index ${index} out of bounds: valid range [0; ${desserts.length - 1}]`);
 });
 
 router.get('/starters/:index/:arg', (req, res) => {
