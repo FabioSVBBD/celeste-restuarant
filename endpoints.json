@@ -8,8 +8,8 @@
             "/tasting-menu": {
                 "/": "Returns Tasting Menu Data",
                 "/{index}": {
-                    "/": "Returns the respective index of Tasting Menu",
-                    "/{arg}": "Returns the property {arg} at the index"
+                    "/": "Returns the respective element of Tasting Menu at {index}",
+                    "/{arg}": "Returns the property {arg} at {index} of Tasting Menu"
                 }
             }
         },
@@ -19,22 +19,22 @@
                 "/starters": {
                     "/": "Returns the Starters subsection of the A La Carte Menu",
                     "/{index}": {
-                        "/": "Returns the respective index of Starters",
-                        "/{arg}": "Returns the property {arg} at the index"
+                        "/": "Returns the respective element of Starters at {index}",
+                        "/{arg}": "Returns the property {arg} at {index} of Starters"
                     }
                 },
                 "/mains": {
                     "/": "Returns the Mains subsection of the A La Carte Menu",
                     "/{index}": {
-                        "/": "Returns the respective index of Mains",
-                        "/{arg}": "Returns the property {arg} at the index"
+                        "/": "Returns the respective element of Mains at {index}",
+                        "/{arg}": "Returns the property {arg} at {index} of Mains"
                     }
                 },
                 "/desserts": {
                     "/": "Returns the Desserts subsection of the A La Carte Menu",
                     "/{index}": {
-                        "/": "Returns the respective index of Desserts",
-                        "/{arg}": "Returns the property {arg} at the index"
+                        "/": "Returns the respective element of Desserts at {index}",
+                        "/{arg}": "Returns the property {arg} at {index} of Desserts"
                     }
                 }
             }
