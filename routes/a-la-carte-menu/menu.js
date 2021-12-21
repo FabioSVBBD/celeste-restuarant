@@ -7,92 +7,58 @@ const router = express.Router();
 
 router.get('/', (req, res) => res.send(menu));
 
-router.get('/starters', (req, res) => {
-    const { starters } = menu;
-    res.send(starters);
-});
-router.get('/mains', (req, res) => {
-    const { mains } = menu;
-    res.send(mains);
-});
-router.get('/desserts', (req, res) => {
-    const { desserts } = menu;
-    res.send(desserts);
-});
+router.get('/:type', (req, res) => {
+    const { type } = req.params;
 
-router.get('/starters/:index', (req, res) => {
-    const { starters } = menu;
-    const { index } = req.params;
-
-    if (index >= 0 && index < starters.length)
-        res.send(starters[index]);
-    else
-        res.send(`Index ${index} out of bounds: valid range [0; ${starters.length - 1}]`);
-});
-
-router.get('/mains/:index', (req, res) => {
-    const { mains } = menu;
-    const { index } = req.params;
-
-    if (index >= 0 && index < mains.length)
-        res.send(mains[index]);
-    else
-        res.send(`Index ${index} out of bounds: valid range [0; ${mains.length - 1}]`);
-});
-
-router.get('/desserts/:index', (req, res) => {
-    const { desserts } = menu;
-    const { index } = req.params;
-
-    if (index >= 0 && index < desserts.length)
-        res.send(desserts[index]);
-    else
-        res.send(`Index ${index} out of bounds: valid range [0; ${desserts.length - 1}]`);
-});
-
-router.get('/starters/:index/:arg', (req, res) => {
-    const { starters } = menu;
-    const { index, arg } = req.params;
-
-    if (index >= 0 && index < starters.length)
-    {
-        if (starters[index][arg] !== undefined)
-            res.send(JSON.stringify(starters[index][arg]));
-        else
-            res.send(`${arg} is not a property of item ${index} in A La Carte Menu Starters`);
+    const typeData = menu[type];
+    if (typeData === undefined) {
+        res.send(`${type} is not a property of the A La Carte Menu`);
+        return;
     }
-    else
-        res.send(`index ${index} Out of bounds: valid range [0; ${menu.length - 1}]`);
+
+    res.send(typeData);
 });
 
-router.get('/mains/:index/:arg', (req, res) => {
-    const { mains } = menu;
-    const { index, arg } = req.params;
+router.get('/:type/:index', (req, res) => {
+    const { type, index } = req.params;
 
-    if (index >= 0 && index < mains.length)
-    {
-        if (mains[index][arg] !== undefined)
-            res.send(JSON.stringify(mains[index][arg]));
-        else
-            res.send(`${arg} is not a property of item ${index} in A La Carte Menu Mains`);
+    const typeData = menu[type];
+    if (typeData === undefined) {
+        res.send(`${type} is not a property of the A La Carte Menu`);
+        return;
     }
-    else
-        res.send(`index ${index} Out of bounds: valid range [0; ${menu.length - 1}]`);
-});
-
-router.get('/desserts/:index/:arg', (req, res) => {
-    const { desserts } = menu;
-    const { index, arg } = req.params;
-
-    if (index >= 0 && index < desserts.length)
-    {
-        if (desserts[index][arg] !== undefined)
-            res.send(JSON.stringify(desserts[index][arg]));
-        else
-            res.send(`${arg} is not a property of item ${index} in A La Carte Menu Desserts`);
+    
+    const indexData = typeData[index];
+    if (indexData === undefined) {
+        res.send(`Index ${index} is out of Bounds in menu[${type}]`);
+        return;
     }
-    else
-        res.send(`index ${index} Out of bounds: valid range [0; ${menu.length - 1}]`);
+
+    res.send(indexData);
 });
+
+router.get('/:type/:index/:arg', (req, res) => {
+    const { type, index, arg } = req.params;
+
+    const typeData = menu[type];
+    if (typeData === undefined) {
+        res.send(`${type} is not a property of the A La Carte Menu`);
+        return;
+    }
+
+    const indexData = typeData[index];
+    if (indexData === undefined) {
+        res.send(`Index ${index} is out of Bounds in menu[${type}]`);
+        return;
+    }
+
+    const argData = indexData[arg];
+    if (argData === undefined) {
+        res.send(`${arg} is not a property of menu[${type}][${index}]`);
+        return;
+    }
+
+    res.send(JSON.stringify(argData));
+})
 
 export default router;
