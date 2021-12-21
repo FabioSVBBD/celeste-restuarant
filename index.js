@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 app.use('/tasting-menu', tastingRouter);
 app.use('/a-la-carte-menu', aLaCarteRouter);
 app.use('/auth', authRouter);
-app.use('/pay/', payRouter);
+app.use('/pay', payRouter);
 
 app.get('/', (req, res) => res.send(endpoints));
 
