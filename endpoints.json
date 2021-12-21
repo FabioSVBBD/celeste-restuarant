@@ -1,0 +1,43 @@
+{
+    "information": "All Amounts related to price or cost are in Rands (ZAR)",
+    "endpoints": [
+        { "/": "root - this endpoint" },
+        { "/auth": "Mini App Authorization" },
+        { "/pay": "Mini App Payments" },
+        {
+            "/tasting-menu": {
+                "/": "Returns Tasting Menu Data",
+                "/{index}": {
+                    "/": "Returns the respective index of Tasting Menu",
+                    "/{arg}": "Returns the property {arg} at the index"
+                }
+            }
+        },
+        {
+            "/a-la-carte-menu": {
+                "/": "Returns A La Carte Menu Data",
+                "/starters": {
+                    "/": "Returns the Starters subsection of the A La Carte Menu",
+                    "/{index}": {
+                        "/": "Returns the respective index of Starters",
+                        "/{arg}": "Returns the property {arg} at the index"
+                    }
+                },
+                "/mains": {
+                    "/": "Returns the Mains subsection of the A La Carte Menu",
+                    "/{index}": {
+                        "/": "Returns the respective index of Mains",
+                        "/{arg}": "Returns the property {arg} at the index"
+                    }
+                },
+                "/desserts": {
+                    "/": "Returns the Desserts subsection of the A La Carte Menu",
+                    "/{index}": {
+                        "/": "Returns the respective index of Desserts",
+                        "/{arg}": "Returns the property {arg} at the index"
+                    }
+                }
+            }
+        }
+    ]
+}
