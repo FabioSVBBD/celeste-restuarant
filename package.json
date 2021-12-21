@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "test": "nodemon index.js",
-    "start": "node index.js"
+    "start": "node index.js",
+    "check": "nodemon index.js"
   },
   "keywords": [],
   "author": "Fabio Sousa Vieira",
