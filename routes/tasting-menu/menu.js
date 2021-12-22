@@ -1,6 +1,5 @@
 import express from 'express';
 import fs from 'fs';
-import { isNumberObject } from 'util/types';
 
 const data = JSON.parse(fs.readFileSync('routes/tasting-menu/menu-updated.json'));
 const { menu } = data;
