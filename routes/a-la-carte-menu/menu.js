@@ -1,11 +1,13 @@
 import express from 'express';
 import fs from 'fs';
 
-const menu = JSON.parse(fs.readFileSync('routes/a-la-carte-menu/menu.json'));
+const data = JSON.parse(fs.readFileSync('routes/a-la-carte-menu/menu-updated.json'));
+const { menu } = data;
 
 const router = express.Router();
 
 router.get('/', (req, res) => res.send(menu));
+router.get('/all', (req, res) => res.send(data));
 
 router.get('/:type', (req, res) => {
     const { type } = req.params;
@@ -30,7 +32,7 @@ router.get('/:type/:index', (req, res) => {
     
     const indexData = typeData[index];
     if (indexData === undefined) {
-        res.send(`Index ${index} is out of Bounds in menu[${type}]`);
+        res.send(`Index ${index} Out of bounds in menu[${type}]: valid range [0; ${typeData.length - 1}]`);
         return;
     }
 
@@ -48,7 +50,7 @@ router.get('/:type/:index/:arg', (req, res) => {
 
     const indexData = typeData[index];
     if (indexData === undefined) {
-        res.send(`Index ${index} is out of Bounds in menu[${type}]`);
+        res.send(`Index ${index} Out of bounds in menu[${type}]: valid range [0; ${typeData.length - 1}]`);
         return;
     }
 

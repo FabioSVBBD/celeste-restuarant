@@ -1,0 +1,41 @@
+{
+    "currency": "ZAR",
+    "description": "Tasting Menu",
+    "menu": [
+        {
+            "id": "oysters1",
+            "name": "Oysters",
+            "main": "Glazed oysters with zucchini pearls and sevruga caviar",
+            "secondary": "Wine pairing: kleine zalze brut rose",
+            "price": 100.0
+        },
+        {
+            "id": "tuna1",
+            "name": "Tuna",
+            "main": "Seared anhi tuna with provincial vegetables and tapenade croutons",
+            "secondary": "Wine pairing: bizoe semillon",
+            "price": 100.0
+        },
+        {
+            "id": "bream1",
+            "name": "Bream",
+            "main": "Bream with asparagus, tempura mussels and a lime velouté",
+            "secondary": "Wine pairing:  red city blend",
+            "price": 100.0
+        },
+        {
+            "id": "gouda1",
+            "name": "Gouda",
+            "main": "Aged gouda with espresso, hazelnut and onion",
+            "secondary": "Wine pairing: thelema early harvest",
+            "price": 100.0
+        },
+        {
+            "id": "pannacotta1",
+            "name": "Panna Cotta",
+            "main": "Dark chocolate panna cotta with a rhubarb and cherry compote",
+            "secondary": "Wine pairing: clarington sauvignon blanc",
+            "price": 100.0
+        }
+    ]
+}

@@ -3,7 +3,13 @@
     "endpoints": [
         { "/": "root - this endpoint" },
         { "/auth": "Mini App Authorization" },
-        { "/pay": "Mini App Payments" },
+        {
+            "/pay": {
+                "/": "Mini App Payments",
+                "/paymentNotify": "Used to Notify Mini App of Payment Completion",
+                "/paymentRedirect": "Not Really Sure"
+            }
+        },
         {
             "/tasting-menu": {
                 "/": "Returns Tasting Menu Data",
