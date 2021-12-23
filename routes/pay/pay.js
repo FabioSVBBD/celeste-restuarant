@@ -2,15 +2,13 @@ import express from "express";
 import axios from 'axios';
 import { v4 as uuidv4 } from 'uuid';
 
+import { extractHeaders, dateToString } from "../../modules/helpers.js";
+
 const router = express.Router();
 
 router.get('/', (req, res) => res.send("Unimplemented Endpoint - pay"));
 router.get('/test', (req, res) => {
-    let expDate = new Date();
-    expDate.setFullYear(expDate.getFullYear() + 1);
-    let expTime = dateToString(expDate);
-    console.log(expTime);
-    res.send("Test Data");
+    res.send({"info":"Test Data"});
 })
 
 router.post('/', (req, res) => {
@@ -25,13 +23,6 @@ router.post('/', (req, res) => {
         res.send(await response);
     })();
 });
-
-function dateToString(date) {
-    let retVal = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + "T" +
-                ("0" + date.getHours()).slice(-2) + ":" + date.getMinutes() + ":" + date.getSeconds() + "+08:00" ;
-  
-    return retVal;
-}
 
 async function getPaymentId(order, headers) {
     let expDate = new Date();
@@ -80,33 +71,24 @@ async function getPaymentId(order, headers) {
         data : data
     };
 
-    const response = await axios(config)
-    .catch(function (error) { console.log(error) } );
+    try {
+        const response = await axios(config);
+        console.log("Response Result: ", response.data['result']['resultCode']);
 
-    console.log("Response Result: ", response.data['result']['resultCode']);
-
-    return response.data;
+        return response.data;
+    } catch (error) {
+        console.log(error);
+        return error;
+    }
 }
 
-function extractHeaders(headers) {
-    let c = headers['client-id'];
-    let r = headers['request-time'];
-    let s = headers['signature'];
-    let retVal = {
-        'client-id': c,
-        'request-time': r,
-        'signature': s,
-    };
-
-    return retVal;
-}
-
+// Unimplemented
 router.post('/paymentNotify', (req, res) => {
     const response = req.body;
     //
     console.log("Payment Notification Received");
     console.log(response);
-    res.send(response);
+    res.send({"info": "payment notify hit"});
 });
 
 router.post('/paymentRedirect', (req, res) => {
@@ -114,12 +96,7 @@ router.post('/paymentRedirect', (req, res) => {
     //
     console.log("Payment Redirect Hit");
     console.log(response);
-    res.send(req.body);
+    res.send({"info": "payment redirect hit"});
 });
 
 export default router;
-
-// Should receive order object { containing data such as productCode, salesCode etc.}
-// Should post order object to https://vodapay-gateway.sandbox.vfs.africa/v2/payments/pay
-// Receive back result and paymentId
-// res.send payment/order detail

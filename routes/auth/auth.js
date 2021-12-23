@@ -1,6 +1,8 @@
 import express from "express";
 import axios from "axios";
 
+import { extractHeaders } from "../../modules/helpers.js";
+
 const app = express.Router();
 const baseUrl = "https://vodapay-gateway.sandbox.vfs.africa";
 
@@ -18,19 +20,6 @@ app.post('/', (req, res) => {
         res.send(await reply);
     })();
 });
-
-function extractHeaders(headers) {
-    let c = headers['client-id'];
-    let r = headers['request-time'];
-    let s = headers['signature'];
-    let retVal = {
-        'client-id': c,
-        'request-time': r,
-        'signature': s,
-    };
-
-    return retVal;
-}
 
 async function applyAuth(headers, authCode) {
     var data = JSON.stringify({
