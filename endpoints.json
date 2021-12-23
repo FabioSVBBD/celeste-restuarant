@@ -1,46 +1,47 @@
 {
     "information": "All Amounts related to price or cost are in Rands (ZAR)",
     "endpoints": [
-        { "/": "root - this endpoint" },
-        { "/auth": "Mini App Authorization" },
+        { "/": "root - this endpoint [GET]" },
+        { "/auth": "Mini App Authorization [POST]" },
         {
             "/pay": {
-                "/": "Mini App Payments",
-                "/paymentNotify": "Used to Notify Mini App of Payment Completion",
-                "/paymentRedirect": "Not Really Sure"
+                "/": "Mini App Payments [GET | POST]",
+                "/test": "Temporary endpoint for basic testing [GET]",
+                "/paymentNotify": "Used to Notify Mini App of Payment Completion [POST]",
+                "/paymentRedirect": "Not Really Sure [POST]"
             }
         },
         {
             "/tasting-menu": {
-                "/": "Returns Tasting Menu Data",
+                "/": "Returns Tasting Menu Data [GET]",
                 "/{index}": {
-                    "/": "Returns the respective element of Tasting Menu at {index}",
-                    "/{arg}": "Returns the property {arg} at {index} of Tasting Menu"
+                    "/": "Returns the respective element of Tasting Menu at {index} [GET]",
+                    "/{arg}": "Returns the property {arg} at {index} of Tasting Menu [GET]"
                 }
             }
         },
         {
             "/a-la-carte-menu": {
-                "/": "Returns A La Carte Menu Data",
+                "/": "Returns A La Carte Menu Data [GET]",
                 "/starters": {
-                    "/": "Returns the Starters subsection of the A La Carte Menu",
+                    "/": "Returns the Starters subsection of the A La Carte Menu [GET]",
                     "/{index}": {
-                        "/": "Returns the respective element of Starters at {index}",
-                        "/{arg}": "Returns the property {arg} at {index} of Starters"
+                        "/": "Returns the respective element of Starters at {index} [GET]",
+                        "/{arg}": "Returns the property {arg} at {index} of Starters [GET]"
                     }
                 },
                 "/mains": {
-                    "/": "Returns the Mains subsection of the A La Carte Menu",
+                    "/": "Returns the Mains subsection of the A La Carte Menu [GET]",
                     "/{index}": {
-                        "/": "Returns the respective element of Mains at {index}",
-                        "/{arg}": "Returns the property {arg} at {index} of Mains"
+                        "/": "Returns the respective element of Mains at {index} [GET]",
+                        "/{arg}": "Returns the property {arg} at {index} of Mains [GET]"
                     }
                 },
                 "/desserts": {
-                    "/": "Returns the Desserts subsection of the A La Carte Menu",
+                    "/": "Returns the Desserts subsection of the A La Carte Menu [GET]",
                     "/{index}": {
-                        "/": "Returns the respective element of Desserts at {index}",
-                        "/{arg}": "Returns the property {arg} at {index} of Desserts"
+                        "/": "Returns the respective element of Desserts at {index} [GET]",
+                        "/{arg}": "Returns the property {arg} at {index} of Desserts [GET]"
                     }
                 }
             }
