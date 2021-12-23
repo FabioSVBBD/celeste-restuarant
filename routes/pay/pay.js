@@ -8,13 +8,23 @@ const router = express.Router();
 
 router.get('/', (req, res) => res.send("Unimplemented Endpoint - pay"));
 router.get('/test', (req, res) => {
-    res.send({"info":"Test Data"});
-})
+    res.send({"info":"Test Endpoint embedded in /pay"});
+});
 
 router.post('/', (req, res) => {
     console.log("Post Request Hit", (new Date()).toTimeString());
     let { order } = req.body;
     let headers = req.headers;
+
+    if (order === undefined) {
+        res.send({"error": "order undefined"});
+        return;
+    }
+
+    if (headers === undefined) {
+        res.send({"error": "headers undefined"});
+        return;
+    }
     headers = extractHeaders(headers);
 
     const response = getPaymentId(order, headers);

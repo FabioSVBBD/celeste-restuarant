@@ -10,8 +10,16 @@ app.get('/', (req, res) => res.send("In Auth Main"));
 
 app.post('/', (req, res) => {
     let { authCode } = req.body;
+    if (authCode === undefined) {
+        res.send({"error": "authCode undefined"});
+        return;
+    }
 
     let headers = req.headers;
+    if (headers === undefined) {
+        res.send({"error":"Headers undefined"});
+        return;
+    }
     headers = extractHeaders(headers);
 
     const reply = applyAuth(headers, authCode);
@@ -36,13 +44,13 @@ async function applyAuth(headers, authCode) {
         },
         data : data
     };
-      
-    const response = await axios(config)
-        .catch(function (error) {
-        console.log(error);
-    });
 
-    return applyAccess(headers, response.data['accessToken']);
+    try {
+        const response = await axios(config);
+        return applyAccess(headers, response.data['accessToken']);
+    } catch (error) {
+        console.log(error);
+    }
 }
 
 async function applyAccess(headers, accessToken) {
@@ -61,12 +69,12 @@ async function applyAccess(headers, accessToken) {
         data : data
     };
 
-    const response = await axios(config)
-    .catch(function (error) {
+    try {
+        const response = await axios(config);
+        return response.data['userInfo'];
+    } catch (error) {
         console.log(error);
-    });
-
-    return response.data['userInfo'];
+    }
 }
 
 export default app;
