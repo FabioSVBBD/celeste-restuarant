@@ -12,7 +12,7 @@ router.get('/test', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-    console.log("Post Request Hit");
+    console.log("Post Request Hit", (new Date()).toTimeString());
     let { order } = req.body;
     let headers = req.headers;
     headers = extractHeaders(headers);
@@ -47,6 +47,7 @@ async function getPaymentId(order, headers) {
                 "currency": "ZAR",
                 "value": order.value
             },
+            "quantity": (order.quantity === undefined ? "1" : order.quantity),
             "goodsName": order.name
             },
             "env": {
@@ -63,9 +64,7 @@ async function getPaymentId(order, headers) {
         method: 'post',
         url: 'https://vodapay-gateway.sandbox.vfs.africa/v2/payments/pay',
         headers: { 
-            'client-id': '2021061800599314688309', 
-            'request-time': '2021-12-23T09:53:39+08:00', 
-            'signature': 'algorithm=RSA256, keyVersion=1, signature=testing_signature', 
+            ...headers, 
             'Content-Type': 'application/json'
         },
         data : data

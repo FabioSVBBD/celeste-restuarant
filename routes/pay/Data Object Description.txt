@@ -1,0 +1,42 @@
+{
+    "productCode":"CASHIER_PAYMENT",                                                                // Required
+    "salesCode":"51051000101000000011",                                                             // Required
+    "paymentRequestId": "4b6371f4-39hj-4a93-jkb7-cadsf6sasdsd87a",                                  // Required
+    "paymentNotifyUrl":"https://celeste-restuarant.herokuapp.com/pay/paymentNotify",
+    "paymentRedirectUrl":"https://celeste-restuarant.herokuapp.com/pay/paymentRedirect",
+    "paymentExpiryTime":"2022-02-22T17:49:31+08:00",
+    "paymentAmount":{                                                                               // Required
+        "currency":"ZAR",                                                                           // Required
+        "value":"500"                                                                               // Required
+    },
+    "order":{                                                                                       // Required
+        "goods":{                                                                                   // Required
+            "referenceGoodsId":"pizza_m12",                                                         // Required
+            "goodsUnitAmount":{                                                                     // Required
+                "currency":"ZAR",                                                                   // Required
+                "value":"20"                                                                        // Required
+            },
+            "itemCount": 2,
+            "items": [
+                {
+                    "id": "pc1",
+                    "name": "panna cotta",
+                    "value": "60"
+                },
+                {
+                    "id": "pc2",
+                    "name": "panna cotta terra cotta haha",
+                    "value": "70"
+                }
+            ],
+            "goodsName": "meals_ordered"                                                            // Required
+        },
+        "env":{
+            "terminalType":"MINI_APP"
+        },
+        "orderDescription":"Margherita Pizza - Large",                                              // Required
+        "buyer":{
+            "referenceBuyerId":"216610000000259832353"
+        }
+    }
+}

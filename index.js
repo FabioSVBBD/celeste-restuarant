@@ -20,4 +20,4 @@ app.use('/pay', payRouter);
 
 app.get('/', (req, res) => res.send(endpoints));
 
-app.listen(PORT, () => console.log(`Listening on localhost:${PORT}`));
+app.listen(PORT, () => console.log(`Listening on localhost:${PORT}`, (new Date()).toTimeString()));
