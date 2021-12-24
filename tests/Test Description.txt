@@ -1,0 +1,2 @@
+to run all tests: npm test                                  // test is a defined script in package.json equal to 'jest'
+to run tests and get coverage: npm test -- --coverage            

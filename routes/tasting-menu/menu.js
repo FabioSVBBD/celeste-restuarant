@@ -36,7 +36,7 @@ router.get('/:index/:arg', (req, res) => {
         return;
     }
 
-    res.send(argData);
+    res.send(JSON.stringify(argData));
 })
 
 export default router;
