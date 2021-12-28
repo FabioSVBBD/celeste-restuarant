@@ -1,0 +1,47 @@
+const axios = require('axios');
+const baseUrl = "http://localhost:5000"; //"https://celeste-restuarant.herokuapp.com";
+const sandboxUrl = "https://vodapay-gateway.sandbox.vfs.africa/v2/authorizations/applyAuthCode"
+
+const auth_calls = {
+    firstMock: jest.fn({"info": "In Auth Main"}),
+    root: () => {
+        return axios.get(`${baseUrl}/auth`);
+    },
+    getValidAuthCode: (headers) => {
+        let data = JSON.stringify({
+            "clientId": "2021062571598628737253",
+            "userId": "216610000000495657455",
+            "scopes": "auth_user"
+        });
+        let config = {
+            method: 'post',
+            url: sandboxUrl,
+            headers: { 
+              ...headers,
+              'Content-Type': 'application/json'
+            },
+            data : data
+        };
+
+        return axios(config);
+
+    },
+    getUserDetails: (authCode, headers) => {
+        let data = JSON.stringify({
+            "authCode": authCode
+        });
+        let config = {
+            method: 'POST',
+            url: `${baseUrl}/auth`,
+            headers: {
+                ...headers,
+                'Content-Type': 'application/json',
+            },
+            data: data,
+        };
+
+        return axios(config);
+    }
+};
+
+module.exports = auth_calls

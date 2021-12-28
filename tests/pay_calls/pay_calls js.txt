@@ -1,0 +1,23 @@
+const axios = require('axios');
+
+const baseUrl = "https://celeste-restuarant.herokuapp.com"; // http://localhost:5000
+
+const pay_calls = {
+    getPaymentUrl: (order, headers) => {
+        let data = JSON.stringify({ "order": order });
+
+        let config = {
+            method: 'post',
+            url: 'http://localhost:5000/pay',
+            headers: { 
+                ...headers,
+                'Content-Type': 'application/json'
+            },
+            data : data
+        };
+
+        return axios(config);
+    }
+};
+
+module.exports = pay_calls;

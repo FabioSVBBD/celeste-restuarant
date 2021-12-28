@@ -1,0 +1,73 @@
+const pay_calls = require('./pay_calls');
+
+const order = {
+    "id": "pizza_m12",
+    "value": "110",
+    "name": "margheritapizza",
+    "description": "Margherita Pizza - Large"
+};
+
+const valid_headers = {
+    "client-id": "2021062571598628737253",
+    "request-time": "2021-12-27T17:49:26.913+08:00",
+    "signature": "algorithm=RSA256, keyVersion=1, signature=testing_signature" 
+}
+
+// Invalid client-id
+const invalid_headers_1 = {
+    "client-id": "2021062571598628737255",
+    "request-time": "2021-12-27T17:49:26.913+08:00",
+    "signature": "algorithm=RSA256, keyVersion=1, signature=testing_signature"
+}
+
+// No client-id
+const invalid_headers_2 = {
+    "request-time": "2021-12-27T17:49:26.913+08:00",
+    "signature": "algorithm=RSA256, keyVersion=1, signature=testing_signature"
+}
+
+jest.setTimeout(1000 * 90); // 90 seconds (1.5min)
+
+test('Get Payment URL [no order]', async () => {
+    expect.assertions(1);
+
+    const { data } = await pay_calls.getPaymentUrl();
+    expect(data).toEqual({"error": "order undefined"});
+});
+
+// test('Get Payment URL [invalid order]', async () => {
+//     expect.assertions(3);
+    
+//     // invalid order types: missing prop, order undefined, prop undefined
+//     // therefore (3 assertions)
+//     // Headers should not be checked so do not worry about them here
+
+//     let bad_order_1 = undefined;
+//     let bad_order_2 = {
+//         "id": "pizza_m12",
+//         "value": "110",
+//         "name": "margheritapizza"
+//     };
+//     let bad_order_3 = {
+//         "id": "pizza_m12",
+//         "value": "110",
+//         "name": "margheritapizza",
+//         "description": undefined
+//     };
+
+//     const data1 = (await pay_calls.getPaymentUrl(bad_order_1)).data;
+//     const data2 = (await pay_calls.getPaymentUrl(bad_order_2)).data;
+//     const data3 = (await pay_calls.getPaymentUrl(bad_order_3)).data;
+
+//     expect(data1).toEqual({"error": "order undefined"});
+//     expect(data2).toEqual({"error": "order missing properties"});
+//     expect(data3).toEqual({"error": `order[${0}] undefined`});
+// });
+
+// test('Get Payment URL [no headers]', async () => {
+//     expect.assertions(1);
+// });
+
+// test('Get Payment URL [invalid headers]', async () => {
+//     expect.assertions(2);
+// });

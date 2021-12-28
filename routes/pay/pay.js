@@ -14,18 +14,30 @@ router.get('/test', (req, res) => {
 router.post('/', (req, res) => {
     console.log("Post Request Hit", (new Date()).toTimeString());
     let { order } = req.body;
-    let headers = req.headers;
+    let headers = extractHeaders(req.headers);
 
     if (order === undefined) {
         res.send({"error": "order undefined"});
         return;
     }
-
-    if (headers === undefined) {
-        res.send({"error": "headers undefined"});
+    if ( !('id' in order && 'value' in order && 'name' in order && 'description' in order))
+    {
+        res.send({"error": "order missing properties"});
         return;
     }
-    headers = extractHeaders(headers);
+    for (const key in order) {
+        if (order[key] === undefined) {
+            res.send({"error": `order[${key}] undefined`});
+            return;
+        }
+    }
+
+    for (const key in headers) {
+        if (headers[key] === undefined) {
+            res.send({"error": `headers[${key}] undefined`});
+            return;
+        }
+    }
 
     const response = getPaymentId(order, headers);
 

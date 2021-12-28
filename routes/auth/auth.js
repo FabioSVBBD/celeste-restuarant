@@ -6,7 +6,7 @@ import { extractHeaders } from "../../modules/helpers.js";
 const app = express.Router();
 const baseUrl = "https://vodapay-gateway.sandbox.vfs.africa";
 
-app.get('/', (req, res) => res.send("In Auth Main"));
+app.get('/', (req, res) => res.send({"info": "In Auth Main"}));
 
 app.post('/', (req, res) => {
     let { authCode } = req.body;
@@ -15,12 +15,13 @@ app.post('/', (req, res) => {
         return;
     }
 
-    let headers = req.headers;
-    if (headers === undefined) {
-        res.send({"error":"Headers undefined"});
-        return;
+    let headers = extractHeaders(req.headers);
+    for (const key in headers) {
+        if (headers[key] === undefined) {
+            res.send({"error":"Headers undefined"});
+            return;
+        }
     }
-    headers = extractHeaders(headers);
 
     const reply = applyAuth(headers, authCode);
 
