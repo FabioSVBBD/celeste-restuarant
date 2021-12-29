@@ -1,12 +1,13 @@
-const axios = require('axios');
+import axios from 'axios';
+import {jest} from '@jest/globals';
 
 const baseUrl = "https://celeste-restuarant.herokuapp.com"; // http://localhost:5000
 
-const pay_calls = {
+export const pay_calls = {
     paymentResponse: {
         "result": {
             "resultStatus": "A",
-            "resultCode": "ACCEPT",
+            "resultCode": "ACCEPT", 
             "resultMessage": "ACCEPT."
         },
         "paymentId": "20211223111212800100166350400448602",
@@ -42,7 +43,7 @@ const pay_calls = {
 
         let config = {
             method: 'post',
-            url: 'http://localhost:5000/pay',
+            url: `${baseUrl}/pay`,
             headers: { 
                 ...headers,
                 'Content-Type': 'application/json'
@@ -54,5 +55,3 @@ const pay_calls = {
         return response;
     }
 };
-
-module.exports = pay_calls;

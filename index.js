@@ -4,7 +4,7 @@ import fs from 'fs';
 
 import tastingRouter from './routes/tasting-menu/menu.js';
 import aLaCarteRouter from './routes/a-la-carte-menu/menu.js';
-import authRouter from './routes/auth/auth.js';
+import authRouter from './routes/auth/auth_refactored.js';
 import payRouter from './routes/pay/pay.js';
 
 const app = express();
