@@ -1,2 +1,4 @@
 to run all tests: npm test                                  // test is a defined script in package.json equal to 'jest'
-to run tests and get coverage: npm test -- --coverage            
+to run tests and get coverage: npm test -- --coverage       
+to run with require syntax: npm test, where test: jest
+ro run with import syntax: npm test, where test: node --experimental-vm-modules node_modules/jest/bin/jest.js

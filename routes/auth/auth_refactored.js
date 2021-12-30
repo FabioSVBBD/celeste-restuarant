@@ -72,7 +72,9 @@ async function getAccessToken(headers, authCode) {
     };
 
     try {
-        const response = (await axios.post(config.url, data, config)).data;
+        // const response = (await axios.post(config.url, data, config)).data;
+        const reply = await axios.post(config.url, data, config);
+        const response = await reply.data;
         
         const { resultCode } = response.result;
         let httpCode = getHttpResponseCode(resultCode);
@@ -87,7 +89,6 @@ async function getAccessToken(headers, authCode) {
                 },
                 "accessToken": accessToken,
             };
-
         }
         else {
             retVal = {
@@ -108,7 +109,7 @@ async function getUserInfo(headers, accessToken) {
         "authClientId": "2021061800599314688309",
         "accessToken": accessToken
     });
-      
+
     var config = {
         method: 'post',
         url: `${baseUrl}/v2/customers/user/inquiryUserInfo`,
@@ -120,8 +121,12 @@ async function getUserInfo(headers, accessToken) {
     };
 
     try {
-        const { userInfo } = (await axios.post(config.url, body, config)).data;
+        const { data } = await axios.post(config.url, body, config);
+        
+        if (data === undefined)
+            return data;
 
+        const { userInfo } = data;
         return userInfo;
     } catch (error) {
         console.log(error);

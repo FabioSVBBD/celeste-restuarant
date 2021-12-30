@@ -7,12 +7,10 @@ import { extractHeaders, dateToString } from "../../modules/helpers.js";
 const router = express.Router();
 
 router.get('/', (req, res) => res.send("Unimplemented Endpoint - pay"));
-router.get('/test', (req, res) => {
-    res.send({"info":"Test Endpoint embedded in /pay"});
-});
+router.get('/test', (req, res) => res.send({"info":"Test Endpoint embedded in /pay"}));
 
 router.post('/', (req, res) => {
-    console.log("Post Request Hit", (new Date()).toTimeString());
+    console.log("Pay Post Request Hit", (new Date()).toTimeString());
     let { order } = req.body;
     let headers = extractHeaders(req.headers);
 

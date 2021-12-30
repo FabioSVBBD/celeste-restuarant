@@ -1,8 +1,17 @@
-// const axios = require('axios');
 import axios from 'axios';
 import {jest} from '@jest/globals';
 
 import { getResponseObject } from '../../routes/auth/auth_refactored';
+
+/**
+SUCCESS : 200
+UNKNOWN_EXCEPTION: 500
+USED_CODE: 401
+EXPIRED_CODE: 401
+REFERENCE_CLIENT_ID_NOT_MATCH: 400
+PARAM_ILLEGAL: 400
+default: 404
+ */
 
 const valid_headers = {
     "client-id": "2021062571598628737253",
@@ -69,9 +78,7 @@ const reply_Unknown = {
             }
         }
     },
-    second: {
-
-    }
+    second: {}
 };
 const reply_Used = {
     "first": {
@@ -130,130 +137,96 @@ const reply_error = {
     second: {},
 };
 
+const genericStub = function(type) {
+    let resultType = {};
+
+    switch (type) {
+        case 'SUCCESS':
+            resultType = reply_Success;
+            break;
+        case 'UNKNOWN_EXCEPTION':
+            resultType = reply_Unknown;
+            break;
+        case 'USED_CODE':
+            resultType = reply_Used;
+            break;
+        case 'EXPIRED_CODE':
+            resultType = reply_Expired;
+            break;
+        case 'REFERENCE_CLIENT_ID_NOT_MATCH':
+            resultType = reply_IdNoMatch;
+            break;
+        case 'PARAM_ILLEGAL':
+            resultType = reply_Param;
+            break;
+        default:
+            resultType = reply_error;
+            break;
+    }
+
+    const stub = jest
+        .spyOn(axios, 'post')
+        .mockClear()
+        .mockResolvedValueOnce(resultType.first)
+        .mockResolvedValueOnce(resultType.second);
+
+    return stub;
+}
 
 jest.setTimeout(1000 * 90); // 90 seconds
-
-const createSuccessPostStub = function() {
-    const stub = jest
-        .spyOn(axios, 'post')
-        .mockClear()
-        .mockResolvedValueOnce(reply_Success.first)
-        .mockResolvedValueOnce(reply_Success.second);
-
-    return stub;
-}
-
-const createExceptionPostStub = function() {
-    const stub = jest
-        .spyOn(axios, 'post')
-        .mockClear()
-        .mockResolvedValueOnce(reply_Unknown.first)
-        .mockResolvedValueOnce(reply_Unknown.second);
-
-    return stub;
-}
-
-const createUsedPostStub = function() {
-    const stub = jest
-        .spyOn(axios, 'post')
-        .mockClear()
-        .mockResolvedValueOnce(reply_Used.first)
-        .mockResolvedValueOnce(reply_Used.second);
-
-    return stub;
-}
-
-const createExpiredPostStub = function() {
-    const stub = jest
-        .spyOn(axios, 'post')
-        .mockClear()
-        .mockResolvedValueOnce(reply_Expired.first)
-        .mockResolvedValueOnce(reply_Expired.second);
-
-    return stub;
-}
-
-const createIdNoMatchPostStub = function() {
-    const stub = jest
-        .spyOn(axios, 'post')
-        .mockClear()
-        .mockResolvedValueOnce(reply_IdNoMatch.first)
-        .mockResolvedValueOnce(reply_IdNoMatch.second);
-
-    return stub;
-}
-
-const createParamPostStub = function() {
-    const stub = jest
-        .spyOn(axios, 'post')
-        .mockClear()
-        .mockResolvedValueOnce(reply_Param.first)
-        .mockResolvedValueOnce(reply_Param.second);
-
-    return stub;
-}
-
-const createErrorPostStub = function() {
-    const stub = jest
-        .spyOn(axios, 'post')
-        .mockClear()
-        .mockResolvedValueOnce(reply_error.first)
-        .mockResolvedValueOnce(reply_error.second);
-
-    return stub;
-}
 
 describe("Auth Refactored Tests", () => {
     afterEach(jest.clearAllMocks);
     it ('Refactored: Should return status code 200 given "SUCCESS"', async () => {
-        const stub = createSuccessPostStub();
+        const stub = genericStub('SUCCESS');
         const { result } = await getResponseObject('authCode', valid_headers);
 
         expect(result.httpCode).toEqual(200);
         expect(stub).toHaveBeenCalledTimes(2);
     });
     it ('Refactored: Should return status code 500 given "UNKNOWN_EXCEPTION"', async () => {
-        const stub = createExceptionPostStub();
+        const stub = genericStub('UNKNOWN_EXCEPTION');
         const { result } = await getResponseObject('authCode', valid_headers);
 
         expect(result.httpCode).toEqual(500);
         expect(stub).toHaveBeenCalledTimes(2);
     });
     it ('Refactored: Should return status code 401 given "USED_CODE"', async () => {
-        const stub = createUsedPostStub();
+        const stub = genericStub('USED_CODE');
         const { result } = await getResponseObject('authCode', valid_headers);
 
         expect(result.httpCode).toEqual(401);
         expect(stub).toHaveBeenCalledTimes(2);
     });
     it ('Refactored: Should return status code 401 given "EXPIRED_CODE"', async () => {
-        const stub = createExpiredPostStub();
+        const stub = genericStub('EXPIRED_CODE');
         const { result } = await getResponseObject('authCode', valid_headers);
 
         expect(result.httpCode).toEqual(401);
         expect(stub).toHaveBeenCalledTimes(2);
     });
     it ('Refactored: Should return status code 400 given "REFERENCE_CLIENT_ID_NOT_MATCH"', async () => {
-        const stub = createIdNoMatchPostStub();
+        const stub = genericStub('REFERENCE_CLIENT_ID_NOT_MATCH');
         const { result } = await getResponseObject('authCode', valid_headers);
 
         expect(result.httpCode).toEqual(400);
         expect(stub).toHaveBeenCalledTimes(2);
     });
     it ('Refactored: Should return status code 400 given "PARAM_ILLEGAL"', async () => {
-        const stub = createParamPostStub();
+        const stub = genericStub('PARAM_ILLEGAL');
         const { result } = await getResponseObject('authCode', valid_headers);
 
         expect(result.httpCode).toEqual(400);
         expect(stub).toHaveBeenCalledTimes(2);
     });
     it ('Refactored: Should return status code 404 given unknown paramter', async () => {
-        const stub = createErrorPostStub();
+        const stub = genericStub('ERROR');  // Any string that isn't one of the above valid codes
         const { result } = await getResponseObject('authCode', valid_headers);
 
         expect(result.httpCode).toEqual(404);
         expect(stub).toHaveBeenCalledTimes(2);
     });
+
     it ('Refactored: Should return undefined authcode', async () => {
         const response = await getResponseObject();
 

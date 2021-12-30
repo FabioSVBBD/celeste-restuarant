@@ -46,8 +46,6 @@ async function applyAuth(headers, authCode) {
         data : data
     };
 
-    console.log("headers", headers);
-
     try {
         const response = await axios(config);
         return applyAccess(headers, response.data['accessToken']);

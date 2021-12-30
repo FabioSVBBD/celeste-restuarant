@@ -1,24 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1640788432333" clover="3.2.0">
-  <project timestamp="1640788432333" name="All files">
-    <metrics statements="132" coveredstatements="124" conditionals="35" coveredconditionals="35" methods="23" coveredmethods="19" elements="190" coveredelements="178" complexity="0" loc="132" ncloc="132" packages="4" files="4" classes="4"/>
+<coverage generated="1640849584783" clover="3.2.0">
+  <project timestamp="1640849584783" name="All files">
+    <metrics statements="79" coveredstatements="72" conditionals="22" coveredconditionals="22" methods="13" coveredmethods="10" elements="114" coveredelements="104" complexity="0" loc="79" ncloc="79" packages="3" files="3" classes="3"/>
     <package name="modules">
-      <metrics statements="7" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+      <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
       <file name="helpers.js" path="C:\Users\sousf001\Documents\celeste-restuarant\modules\helpers.js">
-        <metrics statements="7" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+        <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="3" count="15" type="stmt"/>
         <line num="4" count="15" type="stmt"/>
         <line num="5" count="15" type="stmt"/>
         <line num="6" count="15" type="stmt"/>
         <line num="12" count="15" type="stmt"/>
-        <line num="17" count="0" type="stmt"/>
-        <line num="20" count="0" type="stmt"/>
+        <line num="14" count="15" type="stmt"/>
+        <line num="19" count="15" type="stmt"/>
+        <line num="22" count="15" type="stmt"/>
       </file>
     </package>
     <package name="routes.auth">
-      <metrics statements="60" coveredstatements="54" conditionals="20" coveredconditionals="20" methods="8" coveredmethods="5"/>
+      <metrics statements="61" coveredstatements="54" conditionals="22" coveredconditionals="22" methods="8" coveredmethods="5"/>
       <file name="auth_refactored.js" path="C:\Users\sousf001\Documents\celeste-restuarant\routes\auth\auth_refactored.js">
-        <metrics statements="60" coveredstatements="54" conditionals="20" coveredconditionals="20" methods="8" coveredmethods="5"/>
+        <metrics statements="61" coveredstatements="54" conditionals="22" coveredconditionals="22" methods="8" coveredmethods="5"/>
         <line num="6" count="1" type="stmt"/>
         <line num="7" count="1" type="stmt"/>
         <line num="9" count="1" type="stmt"/>
@@ -41,105 +42,45 @@
         <line num="40" count="3" type="stmt"/>
         <line num="43" count="7" type="stmt"/>
         <line num="44" count="7" type="stmt"/>
-        <line num="46" count="7" type="stmt"/>
-        <line num="49" count="7" type="cond" truecount="2" falsecount="0"/>
-        <line num="50" count="1" type="stmt"/>
-        <line num="56" count="6" type="stmt"/>
-        <line num="61" count="7" type="stmt"/>
-        <line num="66" count="7" type="stmt"/>
+        <line num="45" count="7" type="stmt"/>
+        <line num="47" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="48" count="1" type="stmt"/>
+        <line num="54" count="6" type="stmt"/>
+        <line num="59" count="7" type="stmt"/>
+        <line num="64" count="7" type="stmt"/>
+        <line num="74" count="7" type="stmt"/>
+        <line num="76" count="7" type="stmt"/>
         <line num="77" count="7" type="stmt"/>
         <line num="79" count="7" type="stmt"/>
         <line num="80" count="7" type="stmt"/>
         <line num="81" count="7" type="stmt"/>
-        <line num="94" count="7" type="stmt"/>
-        <line num="96" count="7" type="stmt"/>
-        <line num="97" count="7" type="stmt"/>
-        <line num="98" count="7" type="stmt"/>
-        <line num="100" count="7" type="cond" truecount="2" falsecount="0"/>
-        <line num="101" count="1" type="stmt"/>
-        <line num="103" count="1" type="stmt"/>
-        <line num="112" count="6" type="stmt"/>
-        <line num="119" count="7" type="stmt"/>
-        <line num="121" count="0" type="stmt"/>
-        <line num="126" count="7" type="stmt"/>
-        <line num="131" count="7" type="stmt"/>
-        <line num="141" count="7" type="stmt"/>
-        <line num="142" count="7" type="stmt"/>
-        <line num="144" count="1" type="stmt"/>
-        <line num="146" count="6" type="stmt"/>
-        <line num="153" count="7" type="cond" truecount="8" falsecount="0"/>
-        <line num="156" count="1" type="stmt"/>
-        <line num="157" count="1" type="stmt"/>
-        <line num="159" count="1" type="stmt"/>
-        <line num="160" count="1" type="stmt"/>
-        <line num="163" count="2" type="stmt"/>
-        <line num="164" count="2" type="stmt"/>
-        <line num="167" count="2" type="stmt"/>
-        <line num="168" count="2" type="stmt"/>
-        <line num="170" count="1" type="stmt"/>
-        <line num="171" count="1" type="stmt"/>
-        <line num="174" count="7" type="stmt"/>
-      </file>
-    </package>
-    <package name="tests.auth">
-      <metrics statements="55" coveredstatements="55" conditionals="15" coveredconditionals="15" methods="10" coveredmethods="10"/>
-      <file name="auth.js" path="C:\Users\sousf001\Documents\celeste-restuarant\tests\auth\auth.js">
-        <metrics statements="55" coveredstatements="55" conditionals="15" coveredconditionals="15" methods="10" coveredmethods="10"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="8" count="1" type="stmt"/>
-        <line num="81" count="1" type="stmt"/>
+        <line num="83" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="84" count="1" type="stmt"/>
         <line num="86" count="1" type="stmt"/>
-        <line num="89" count="1" type="stmt"/>
-        <line num="94" count="1" type="stmt"/>
-        <line num="97" count="1" type="stmt"/>
-        <line num="102" count="1" type="stmt"/>
-        <line num="105" count="1" type="stmt"/>
-        <line num="110" count="1" type="stmt"/>
-        <line num="113" count="1" type="stmt"/>
-        <line num="118" count="1" type="stmt"/>
-        <line num="121" count="1" type="stmt"/>
-        <line num="126" count="1" type="stmt"/>
-        <line num="131" count="9" type="cond" truecount="7" falsecount="0"/>
-        <line num="133" count="2" type="stmt"/>
-        <line num="134" count="2" type="stmt"/>
-        <line num="136" count="1" type="stmt"/>
-        <line num="137" count="1" type="stmt"/>
-        <line num="139" count="1" type="stmt"/>
-        <line num="140" count="1" type="stmt"/>
-        <line num="142" count="1" type="stmt"/>
+        <line num="94" count="6" type="stmt"/>
+        <line num="101" count="7" type="stmt"/>
+        <line num="103" count="0" type="stmt"/>
+        <line num="108" count="7" type="stmt"/>
+        <line num="113" count="7" type="stmt"/>
+        <line num="123" count="7" type="stmt"/>
+        <line num="125" count="7" type="stmt"/>
+        <line num="127" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="128" count="6" type="stmt"/>
+        <line num="130" count="1" type="stmt"/>
+        <line num="131" count="1" type="stmt"/>
+        <line num="133" count="0" type="stmt"/>
+        <line num="140" count="7" type="cond" truecount="8" falsecount="0"/>
         <line num="143" count="1" type="stmt"/>
-        <line num="145" count="1" type="stmt"/>
+        <line num="144" count="1" type="stmt"/>
         <line num="146" count="1" type="stmt"/>
-        <line num="148" count="2" type="stmt"/>
-        <line num="149" count="2" type="stmt"/>
-        <line num="151" count="1" type="stmt"/>
-        <line num="152" count="1" type="stmt"/>
-        <line num="155" count="9" type="stmt"/>
-        <line num="160" count="9" type="stmt"/>
-        <line num="163" count="13" type="stmt"/>
-        <line num="167" count="13" type="stmt"/>
-        <line num="177" count="13" type="stmt"/>
-        <line num="178" count="13" type="stmt"/>
-        <line num="179" count="13" type="stmt"/>
-        <line num="181" count="13" type="stmt"/>
-        <line num="186" count="15" type="cond" truecount="8" falsecount="0"/>
-        <line num="189" count="3" type="stmt"/>
-        <line num="190" count="3" type="stmt"/>
-        <line num="192" count="2" type="stmt"/>
-        <line num="193" count="2" type="stmt"/>
-        <line num="196" count="4" type="stmt"/>
-        <line num="197" count="4" type="stmt"/>
-        <line num="200" count="5" type="stmt"/>
-        <line num="201" count="5" type="stmt"/>
-        <line num="203" count="1" type="stmt"/>
-        <line num="204" count="1" type="stmt"/>
-        <line num="207" count="15" type="stmt"/>
-        <line num="210" count="2" type="stmt"/>
-        <line num="213" count="2" type="stmt"/>
-        <line num="223" count="2" type="stmt"/>
-        <line num="224" count="2" type="stmt"/>
-        <line num="226" count="2" type="stmt"/>
+        <line num="147" count="1" type="stmt"/>
+        <line num="150" count="2" type="stmt"/>
+        <line num="151" count="2" type="stmt"/>
+        <line num="154" count="2" type="stmt"/>
+        <line num="155" count="2" type="stmt"/>
+        <line num="157" count="1" type="stmt"/>
+        <line num="158" count="1" type="stmt"/>
+        <line num="161" count="7" type="stmt"/>
       </file>
     </package>
     <package name="tests.pay">

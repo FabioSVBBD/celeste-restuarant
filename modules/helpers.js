@@ -9,6 +9,8 @@ export function extractHeaders(headers) {
         'signature': s,
     };
 
+    dateToString(new Date());
+
     return retVal;
 }
 

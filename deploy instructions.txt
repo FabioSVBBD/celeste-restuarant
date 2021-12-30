@@ -1,6 +1,6 @@
 Very First time:
 heroku login
-heroku git:clone -a celeste-restuarant
+heroku git:clone -a celeste-restuarant      // pulls code from repository
 
 Then When saving:
 git add .

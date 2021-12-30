@@ -2,8 +2,7 @@ App is running at: https://celeste-restuarant.herokuapp.com/
 
 
 To Run Locally: npm run local 
-To Run Tests: npm test 
-To Run tests: node --experimental-vm-modules node_modules/jest/bin/jest.js
+To Run Tests: see /tests/Test Description.txt
 To Deploy:  git add .
             git commit -m "Commit Message"
             git push heroku master
