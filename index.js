@@ -9,7 +9,7 @@ import authRouter from './routes/auth/auth_refactored.js';
 import payRouter from './routes/pay/pay.js';
 
 const app = express();
-const PORT = process.env.PORT || 2000;
+const PORT = process.env.PORT || 5000; // TAKE NOT OF PORT NUMBER
 
 const endpoints = JSON.parse(fs.readFileSync('endpoints.json'));
 

@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 
 import { extractHeaders, dateToString } from "../../modules/helpers.js";
 
-// FAILS SOMETIMES FOR SOME REASON, COULD BE RELATED UUIDV4, but re-running the request should work
+// FAILS SOMETIMES FOR SOME REASON, COULD BE RELATED TO UUIDV4, but re-running the request should work
 
 const router = express.Router();
 
