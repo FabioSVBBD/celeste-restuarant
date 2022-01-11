@@ -72,6 +72,9 @@ async function getAccessToken(headers, authCode) {
     data: data,
   };
 
+  console.log("in getAccessToken, data: ", data);
+  console.log("in getAccessToken, config: ", config);
+
   try {
     // const response = (await axios.post(config.url, data, config)).data;
     const reply = await axios.post(config.url, data, config);
