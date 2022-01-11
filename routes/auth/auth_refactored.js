@@ -122,6 +122,9 @@ async function getUserInfo(headers, accessToken) {
     data: body,
   };
 
+  console.log("in getUserInfo: ", body);
+  console.log('in getUserInfo: ', config);
+
   try {
     const { data } = await axios.post(config.url, body, config);
 
