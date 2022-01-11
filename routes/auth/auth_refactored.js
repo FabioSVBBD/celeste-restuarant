@@ -12,6 +12,9 @@ app.post("/", (req, res) => {
   let { authCode } = req.body;
   let headers = req.headers;
 
+  console.log("auth authCode: ", authCode);
+  console.log("auth headers: ", headers);
+
   (async () => {
     const retVal = await getResponseObject(authCode, headers);
     res.send(retVal);
@@ -73,6 +76,8 @@ async function getAccessToken(headers, authCode) {
     // const response = (await axios.post(config.url, data, config)).data;
     const reply = await axios.post(config.url, data, config);
     const response = await reply.data;
+
+    console.log("auth response: ", response);
 
     const { resultCode } = response.result;
     let httpCode = getHttpResponseCode(resultCode);
